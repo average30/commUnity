@@ -1,4 +1,3 @@
-// Updated Task List including Cybersecurity-related tasks
 const myTasks = [
     { id: 1, title: 'Inspect Neighborhood Clean-Up', status: 'In Progress', description: 'Help inspect and ensure the completion of the neighborhood clean-up initiative. Review areas cleaned, take notes, and report back.', video: 'https://www.youtube.com/embed/HCPSmOPP_-4', points: 50 },
     { id: 2, title: 'Reduce Energy Use Campaign Feedback', status: 'Completed', description: 'Collect feedback on the city-wide energy reduction campaign and report findings.', video: '', points: 30 },
@@ -10,7 +9,6 @@ const myTasks = [
     { id: 8, title: 'Water Usage Monitoring Campaign', status: 'Pending', description: 'Participate in a water usage monitoring campaign to reduce wastage.', video: '', points: 30 },
     { id: 9, title: 'Update City Park Equipment', status: 'Completed', description: 'Help update and maintain city park equipment for safety and efficiency.', video: '', points: 40 },
     { id: 10, title: 'Coordinate Local School Energy Audit', status: 'In Progress', description: 'Work with local schools to assess and optimize energy usage.', video: '', points: 55 },
-    // Cybersecurity-related tasks
     { id: 11, title: 'City Network Vulnerability Assessment', status: 'In Progress', description: 'Perform a vulnerability assessment on the city\'s network infrastructure.', video: '', points: 60 },
     { id: 12, title: 'Incident Response Plan for Public Services', status: 'Pending', description: 'Develop an incident response plan for the city\'s public services.', video: '', points: 70 },
     { id: 13, title: 'IoT Device Security Audit for Smart City Infrastructure', status: 'In Progress', description: 'Audit the security of IoT devices used in the city\'s smart infrastructure.', video: '', points: 65 },

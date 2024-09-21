@@ -33,7 +33,7 @@ tasks.forEach(task => {
     taskListDiv.appendChild(taskDiv);
 });
 
-// Voting functionality with unvote support and modal
+//Voting System
 const modal = document.getElementById('popupModal');
 const closeModalBtn = document.querySelector('.close-btn');
 
@@ -51,7 +51,7 @@ document.querySelectorAll('.vote-btn').forEach(button => {
             e.target.textContent = 'Voted';
             e.target.style.backgroundColor = '#ccc'; // Grey out the button
 
-            showModal();  // Show thank you modal
+            showModal();  //thank you
         } else {
             task.votes -= 1;  // Decrement vote count
             task.voted = false; // Mark as not voted
