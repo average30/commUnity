@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicConnect - Smart City Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>CivicConnect Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#tasks">Top Voted Tasks</a></li>
+                <li><a href="#city-data">City Data Monitoring</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
+                <li><a href="my-tasks.html">My Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Top Voted Tasks Section -->
+        <section id="tasks">
+            <h2>Top Voted Tasks</h2>
+            <div id="task-list" class="grid-container">
+                <!-- Task cards with mock images and vote buttons -->
+            </div>
+        </section>
+
+        <!-- City Data Monitoring Section -->
+        <section id="city-data">
+            <h2>City Data Monitoring</h2>
+            <div id="data-charts" class="grid-container">
+                <div class="chart-card">
+                    <h3>Water Usage</h3>
+                    <canvas id="waterChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Energy Consumption</h3>
+                    <canvas id="energyChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Traffic Flow</h3>
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+
+ <!--Mockup Map Data Section -->
+    <!-- <section id="map-data">
+        <h2>City Map Monitoring</h2>
+        <div class="map-container">
+            <img src="images/mock-map.png" alt="City Map" class="mock-map">
+        </div>
+    </section> -->
+
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard">
+            <h2>Top Contributors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Leaderboard entries will be dynamically generated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Popup Modal for Voting Feedback -->
+        <div id="popupModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h3>Thank you for voting!</h3>
+                <p>Your vote has been counted towards this task.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
