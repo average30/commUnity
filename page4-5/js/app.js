@@ -6,9 +6,10 @@ const tasks = [
 ];
 
 const leaderboard = [
-    { rank: 1, name: 'John Doe', points: 250 },
-    { rank: 2, name: 'Jane Smith', points: 230 },
-    { rank: 3, name: 'Alice Brown', points: 215 }
+    { rank: 1, name: 'Anita Patel', city: 'West Palm Beach',points: 250 },
+    { rank: 2, name: 'Jason Hill', city: 'Boca Raton', points: 230 },
+    { rank: 3, name: 'Michelle Bakels', city: 'Jupiter', points: 215 },
+    { rank: 4, name: 'Sreedhar Allani', city: 'Boynton Beach', points: 200 }
 ];
 
 const joinedTasks = []; // To keep track of joined tasks
@@ -122,7 +123,7 @@ function updateMyTasksPage() {
 const leaderboardBody = document.getElementById('leaderboard-body');
 leaderboard.forEach(entry => {
     const row = document.createElement('tr');
-    row.innerHTML = `<td>${entry.rank}</td><td>${entry.name}</td><td>${entry.points}</td>`;
+    row.innerHTML = `<td>${entry.rank}</td><td>${entry.name}</td><td>${entry.city}</td><td>${entry.points}</td>`;
     leaderboardBody.appendChild(row);
 });
 
