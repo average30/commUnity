@@ -1,8 +1,8 @@
 // Dummy Data
 const tasks = [
-    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/placeholder.png', voted: false },
-    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/placeholder.png', voted: false },
-    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/placeholder.png', voted: false }
+    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/clean-up.webp', voted: false },
+    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/reduce-energy.webp', voted: false },
+    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/improve-lighting.webp', voted: false }
 ];
 
 const leaderboard = [
