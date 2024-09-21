@@ -19,9 +19,9 @@ const myTasks = [
 ];
 
 const communityTasks = [
-    { id: 1, title: 'Neighborhood Clean-Up', image: 'images/cleanup_icon.png', voted: false, joined: false, date: '6 March', time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.' },
-    { id: 2, title: 'Reduce Energy Use Campaign', image: 'images/energy_icon.png', voted: false, joined: false, date: '12 March', time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption.' },
-    { id: 3, title: 'Improve Street Lighting', image: 'images/lighting_icon.png', voted: false, joined: false, date: '17 March', time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.' }
+    { id: 1, title: 'Neighborhood Clean-Up', image: 'images/cleanup_icon.png', voted: false, joined: false, date: '6 March', time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.', points: '200' },
+    { id: 2, title: 'Reduce Energy Use Campaign', image: 'images/energy_icon.png', voted: false, joined: false, date: '12 March', time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption.', points: '150'  },
+    { id: 3, title: 'Improve Street Lighting', image: 'images/lighting_icon.png', voted: false, joined: false, date: '17 March', time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.', points: '150' }
 ];
 
 // Populate My Tasks
@@ -56,6 +56,7 @@ communityTasks.forEach(task => {
         <p><strong>Date:</strong> ${task.date}</p>
         <p><strong>Time:</strong> ${task.time}</p>
         <p><strong>Location:</strong> ${task.location}</p>
+        <p><strong>Points:</strong> ${task.points}</p>
     `;
     communityTaskList.appendChild(taskItem);
 });
