@@ -1,8 +1,8 @@
 // Dummy Data
 const tasks = [
-    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/clean-up.webp', voted: false, joined: false, time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.' },
-    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/reduce-energy.webp', voted: false, joined: false, time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption. This event will include a presentation and discussions on best practices.' },
-    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/improve-lighting.webp', voted: false, joined: false, time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.' }
+    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/cleanup_icon.png', voted: false, joined: false, time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.' },
+    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/energy_icon.png', voted: false, joined: false, time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption. This event will include a presentation and discussions on best practices.' },
+    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/lighting_icon.png', voted: false, joined: false, time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.' }
 ];
 
 const leaderboard = [
