@@ -325,3 +325,7 @@ button#signInButton:hover {
 .spinner.hidden {
     display: none;
 }
+
+.center {
+    text-align: center;
+}

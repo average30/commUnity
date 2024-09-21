@@ -1,0 +1,76 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/CYR_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+header {
+    background-color: #0086BC;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Dashboard Summary Boxes */
+.dashboard-summary {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.summary-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.combo-chart, .map-section {
+    width: 48%;
+    margin: 20px auto;
+}
+
+.dashboard-data {
+    display: flex;
+    justify-content: space-around;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #0086BC;
+    color: white;
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}

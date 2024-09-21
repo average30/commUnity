@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYR - Community Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<!--<body style="background-image: url('page4-5/images/CYR_background.png'); 
+             background-size: cover; 
+             background-repeat: no-repeat; 
+             background-position: bottom center;"> !-->
+    
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="page4-5/images/CYR_logo1.png" width="10%">
+        </div>
+        <h1>CYR - Community Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="page4-5/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard Overview -->
+    <main>
+        <section class="dashboard-summary">
+                <img src="page4-5/images/day.png" alt="Map" style="width:50%;">
+                <img src="page4-5/images/month.png" alt="Map" style="width:50%;">
+        </section>
+
+        <!-- Chart and Map Section -->
+        <section class="dashboard-data">
+            <div class="combo-chart">
+                <h3>CO2 Emissions Chart</h3>
+                <img src="page4-5/images/graph.png" alt="Map" style="width:100%;">
+            </div>
+            <div class="map-section">
+                <h3>Map</h3>
+                <img src="page4-5/images/mock-map.png" alt="Map" style="width:100%;">
+            </div>
+        </section>
+
+        <!-- Community Events Section -->
+        <center>
+        <section class="community-events">
+            <h3>Community Events/Goals</h3>
+            <ul>
+                <li>+ Clean Up the Park Day</li>
+                <li>+ Community BBQ Fundraiser</li>
+                <li>+ Neighborhood Block Party</li>
+                <li>+ Free Yoga in the Park</li>
+                <li>+ Charity Run/Walk Event</li>
+                <li>+ Community Garden Planting Day</li>
+            </ul>
+        </section>
+    </center>
+
+        <!-- Leaderboard Section -->
+        <section id="leaderboard">
+            <h3>Leaderboard</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                        <th>Unit Price</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <tr>
+                        <td>1</td>
+                        <td>Anita Patel</td>
+                        <td>West Palm Beach</td>
+                        <td>250</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jason Hill</td>
+                        <td>Boca Raton</td>
+                        <td>230</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Michelle Bakels</td>
+                        <td>Jupiter</td>
+                        <td>215</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Sreedhar Allani</td>
+                        <td>Boynton Beach</td>
+                        <td>200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
