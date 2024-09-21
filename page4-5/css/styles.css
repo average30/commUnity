@@ -296,3 +296,32 @@ section#leaderboard thead {
     color: white;
 }
 
+/* Style for form inputs */
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for the sign-in button */
+button#signInButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #0086BC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button#signInButton:hover {
+    background-color: #0073a1; /* Darker hover effect */
+}
+
+/* Hidden loading spinner (you can style it as needed) */
+.spinner.hidden {
+    display: none;
+}

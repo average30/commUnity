@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+</head> 
+<body style="background-image: url('images/CYR_background.png'); 
+             background-size: cover; 
+             background-repeat: no-repeat; 
+             background-position: bottom center;">
+    <header>
+        <h1>CYR - Community Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#tasks">Top Voted Tasks</a></li>
+                <li><a href="#city-data">City Data Monitoring</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
+                <li><a href="suggestions.html">Suggestions</a></li>
+                <li><a href="my-tasks.html">My Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Suggestions</title>
+    <script>
+        function addSuggestion() {
+            // Get the suggestion from the input box
+            var suggestion = document.getElementById('suggestion-input').value;
+            
+            if (suggestion) {
+                // Create a new list item for the suggestion
+                var newItem = document.createElement('li');
+                newItem.textContent = suggestion;
+                
+                // Add the suggestion to the suggestions list
+                document.getElementById('suggestions-list').appendChild(newItem);
+                
+                // Clear the input box
+                document.getElementById('suggestion-input').value = '';
+
+                // Hide "No suggestions yet" message
+                var noSuggestionsMsg = document.getElementById('no-suggestions');
+                if (noSuggestionsMsg) {
+                    noSuggestionsMsg.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+
+
+    <!-- Add margin-top to create space between header and suggestion box -->
+    <div style="width: 50%; margin: 40px auto 0 auto; padding: 20px; border: 2px solid #ccc; background-color: #fff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center;">Community Suggestions</h1>
+
+        <!-- Box to display suggestions -->
+        <div style="border: 2px solid #000; padding: 10px; margin-bottom: 20px;">
+            <h2 style="text-align: center; margin: 0;">Enter your innovative ideas!</h2>
+            <ul id="suggestions-list" style="list-style-type: none; padding: 0;">
+                <li id="no-suggestions" style="text-align: center; padding: 10px;">No suggestions yet.</li>
+            </ul>
+        </div>
+
+        <!-- Form to submit new suggestions -->
+        <textarea id="suggestion-input" 
+                  style="width: 100%; min-height: 120px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; resize: none;" 
+                  placeholder="Enter your suggestion here"></textarea><br><br>
+        <button onclick="addSuggestion()" 
+                style="width: 100%; padding: 10px; background-color: #0086BC; color: white; border: none; border-radius: 5px; cursor: pointer;">Submit Suggestion</button>
+    </div>
+
+</body>
+</html>
