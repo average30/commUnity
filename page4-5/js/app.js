@@ -1,8 +1,8 @@
 // Dummy Data
 const tasks = [
-    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/placeholder.png' },
-    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/placeholder.png' },
-    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/placeholder.png' }
+    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/placeholder.png', voted: false },
+    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/placeholder.png', voted: false },
+    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/placeholder.png', voted: false }
 ];
 
 const leaderboard = [
@@ -19,13 +19,15 @@ tasks.forEach(task => {
     taskDiv.innerHTML = `
         <img src="${task.image}" alt="Task Image">
         <h3>${task.title}</h3>
-        <p>Votes: ${task.votes}</p>
-        <button class="vote-btn" data-task-id="${task.id}">Vote</button>
+        <p>Votes: <span class="vote-count">${task.votes}</span></p>
+        <button class="vote-btn" data-task-id="${task.id}" style="${task.voted ? 'background-color: #ccc;' : ''}">
+            ${task.voted ? 'Voted' : 'Vote'}
+        </button>
     `;
     taskListDiv.appendChild(taskDiv);
 });
 
-// Voting functionality with popup modal
+// Voting functionality with unvote support and modal
 const modal = document.getElementById('popupModal');
 const closeModalBtn = document.querySelector('.close-btn');
 
@@ -33,16 +35,35 @@ document.querySelectorAll('.vote-btn').forEach(button => {
     button.addEventListener('click', (e) => {
         const taskId = e.target.dataset.taskId;
         const task = tasks.find(t => t.id == taskId);
-        task.votes += 1;  // Increment vote count
-        e.target.previousElementSibling.innerHTML = `Votes: ${task.votes}`;  // Update votes display
-        showModal();  // Show thank you modal
+
+        if (!task.voted) {
+            task.votes += 1;  // Increment vote count
+            task.voted = true; // Mark as voted
+
+            // Update votes display and button state
+            e.target.previousElementSibling.querySelector('.vote-count').textContent = task.votes;
+            e.target.textContent = 'Voted';
+            e.target.style.backgroundColor = '#ccc'; // Grey out the button
+
+            showModal();  // Show thank you modal
+        } else {
+            task.votes -= 1;  // Decrement vote count
+            task.voted = false; // Mark as not voted
+
+            // Update votes display and button state
+            e.target.previousElementSibling.querySelector('.vote-count').textContent = task.votes;
+            e.target.textContent = 'Vote';
+            e.target.style.backgroundColor = ''; // Re-enable the button with original color
+        }
     });
 });
 
+// Show the thank you modal
 function showModal() {
     modal.style.display = 'block';
 }
 
+// Close the modal when the close button is clicked
 closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
 });

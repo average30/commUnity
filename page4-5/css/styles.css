@@ -190,3 +190,10 @@ thead {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+
+button.vote-btn:disabled,
+button.vote-btn[style*="background-color: #ccc;"] {
+    background-color: #ccc; /* Grey out the button */
+    color: #666;
+    cursor: pointer; /* Still clickable */
+}
