@@ -37,8 +37,24 @@ main {
     max-width: 1000px;
 }
 
+/* Grid Layout for Tasks and Community Projects */
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
 section {
-    margin-bottom: 40px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .grid-container {
@@ -134,10 +150,8 @@ thead {
 /* Task List */
 .task-list {
     list-style-type: none;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
-    max-width: 600px;
-    text-align: left;
 }
 
 .task-list li {
@@ -191,9 +205,69 @@ thead {
     margin-bottom: 10px;
 }
 
-button.vote-btn:disabled,
-button.vote-btn[style*="background-color: #ccc;"] {
-    background-color: #ccc; /* Grey out the button */
-    color: #666;
-    cursor: pointer; /* Still clickable */
+/* Two-Column Layout */
+#tasks-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between the columns */
+    margin: 20px;
+}
+
+.task-column {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.task-column h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Shared button styling for Vote and Join buttons */
+button.vote-btn, button.join-btn {
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons */
+}
+
+button.vote-btn:hover, button.join-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Disabled buttons (for voted and joined tasks) */
+button.vote-btn:disabled, button.join-btn:disabled {
+    background-color: #ccc; /* Greyed out when disabled */
+    cursor: not-allowed;
+}
+
+/* Styling for individual task cards */
+.task-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+    .columns {
+        grid-template-columns: 1fr; /* Stacks columns vertically on smaller screens */
+    }
+
+    #tasks-container {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
 }

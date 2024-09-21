@@ -1,8 +1,8 @@
 // Dummy Data
 const tasks = [
-    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/clean-up.webp', voted: false },
-    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/reduce-energy.webp', voted: false },
-    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/improve-lighting.webp', voted: false }
+    { id: 1, title: 'Neighborhood Clean-Up', votes: 120, image: 'images/clean-up.webp', voted: false, joined: false, time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.' },
+    { id: 2, title: 'Reduce Energy Use Campaign', votes: 98, image: 'images/reduce-energy.webp', voted: false, joined: false, time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption. This event will include a presentation and discussions on best practices.' },
+    { id: 3, title: 'Improve Street Lighting', votes: 85, image: 'images/improve-lighting.webp', voted: false, joined: false, time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.' }
 ];
 
 const leaderboard = [
@@ -10,6 +10,8 @@ const leaderboard = [
     { rank: 2, name: 'Jane Smith', points: 230 },
     { rank: 3, name: 'Alice Brown', points: 215 }
 ];
+
+const joinedTasks = []; // To keep track of joined tasks
 
 // Populate Top Voted Tasks
 const taskListDiv = document.getElementById('task-list');
@@ -22,6 +24,9 @@ tasks.forEach(task => {
         <p>Votes: <span class="vote-count">${task.votes}</span></p>
         <button class="vote-btn" data-task-id="${task.id}" style="${task.voted ? 'background-color: #ccc;' : ''}">
             ${task.voted ? 'Voted' : 'Vote'}
+        </button>
+        <button class="join-btn" data-task-id="${task.id}" style="${task.joined ? 'background-color: #ccc;' : ''}">
+            ${task.joined ? 'Joined' : 'Join'}
         </button>
     `;
     taskListDiv.appendChild(taskDiv);
@@ -58,6 +63,24 @@ document.querySelectorAll('.vote-btn').forEach(button => {
     });
 });
 
+// Join button functionality to add task to community projects
+document.querySelectorAll('.join-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const taskId = e.target.dataset.taskId;
+        const task = tasks.find(t => t.id == taskId);
+
+        if (!task.joined) {
+            task.joined = true; // Mark as joined
+            joinedTasks.push(task); // Add to joined tasks
+
+            e.target.textContent = 'Joined';
+            e.target.style.backgroundColor = '#ccc'; // Grey out the button
+
+            updateMyTasksPage(); // Update My Tasks page with joined tasks
+        }
+    });
+});
+
 // Show the thank you modal
 function showModal() {
     modal.style.display = 'block';
@@ -67,6 +90,33 @@ function showModal() {
 closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
 });
+
+// Function to update the My Tasks page
+function updateMyTasksPage() {
+    const myCommunityTasksDiv = document.getElementById('community-tasks');
+    myCommunityTasksDiv.innerHTML = ''; // Clear previous entries
+
+    joinedTasks.forEach(task => {
+        const taskRow = document.createElement('div');
+        taskRow.classList.add('community-task-card');
+        taskRow.innerHTML = `
+            <h3>${task.title}</h3>
+            <p>Time: ${task.time}</p>
+            <p>Location: ${task.location}</p>
+            <button class="details-btn" data-task-id="${task.id}">Details</button>
+            <div class="task-details" style="display: none;">
+                <p>${task.description}</p>
+            </div>
+        `;
+        myCommunityTasksDiv.appendChild(taskRow);
+
+        // Toggle showing the large description on click
+        taskRow.querySelector('.details-btn').addEventListener('click', (e) => {
+            const detailsDiv = taskRow.querySelector('.task-details');
+            detailsDiv.style.display = detailsDiv.style.display === 'none' ? 'block' : 'none';
+        });
+    });
+}
 
 // Populate Leaderboard
 const leaderboardBody = document.getElementById('leaderboard-body');

@@ -18,6 +18,12 @@ const myTasks = [
     { id: 15, title: 'Monitor and Mitigate Phishing Attempts on City Systems', status: 'In Progress', description: 'Monitor and mitigate phishing attempts targeting city systems.', video: '', points: 75 }
 ];
 
+const communityTasks = [
+    { id: 1, title: 'Neighborhood Clean-Up', image: 'images/clean-up.webp', voted: false, joined: false, date: '6 March', time: '9:00 AM - 12:00 PM', location: 'Main Street Park', description: 'Join us in cleaning up the neighborhood. We will meet at Main Street Park and provide all necessary supplies.' },
+    { id: 2, title: 'Reduce Energy Use Campaign', image: 'images/reduce-energy.webp', voted: false, joined: false, date: '12 March', time: '1:00 PM - 4:00 PM', location: 'City Hall', description: 'Help the community learn how to reduce energy consumption.' },
+    { id: 3, title: 'Improve Street Lighting', image: 'images/improve-lighting.webp', voted: false, joined: false, date: '17 March', time: '6:00 PM - 9:00 PM', location: 'Downtown Area', description: 'Work with city officials to assess and improve street lighting in the downtown area. The event will involve a walking tour to identify improvements.' }
+];
+
 // Populate My Tasks
 const myTaskList = document.getElementById('my-task-list');
 myTasks.forEach(task => {
@@ -27,18 +33,29 @@ myTasks.forEach(task => {
         <p>Status: ${task.status}</p>
         <div class="task-details">
             <p>${task.description ? task.description : 'No description available.'}</p>
-            <iframe width="100%" height="315" src="${task.video ? task.video : 'https://www.youtube.com/embed/HCPSmOPP_-4'}" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+            <iframe src="${task.video ? task.video : 'https://www.youtube.com/embed/HCPSmOPP_-4'}" 
+                    frameborder="0" allowfullscreen></iframe>
             <p><strong>Points:</strong> ${task.points ? task.points : 'Not specified'}</p>
         </div>
     `;
-    
-    // Add click functionality to expand/collapse each task
     taskItem.addEventListener('click', function () {
         const taskDetails = this.querySelector('.task-details');
         taskDetails.style.display = taskDetails.style.display === 'block' ? 'none' : 'block';
     });
-
     myTaskList.appendChild(taskItem);
+});
+
+// Populate Community Tasks
+const communityTaskList = document.getElementById('community-project-list');
+communityTasks.forEach(task => {
+    const taskItem = document.createElement('li');
+    taskItem.innerHTML = `
+        <h3>${task.title}</h3>
+        <img src="${task.image}" alt="${task.title}" width="100%" height="200">
+        <p>${task.description}</p>
+        <p><strong>Date:</strong> ${task.date}</p>
+        <p><strong>Time:</strong> ${task.time}</p>
+        <p><strong>Location:</strong> ${task.location}</p>
+    `;
+    communityTaskList.appendChild(taskItem);
 });
